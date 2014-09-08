@@ -60,13 +60,13 @@ namespace DragonCombatSimulator
                         dragonHealth -= sword;
                     
                         Console.WriteLine("Nice attack you did " + sword + " damage. The dragon now has " + dragonHealth + " hp left.");
-                        Console.WriteLine("You have " + yourHealth + " left.");
+                        Console.WriteLine("You have " + yourHealth + " hp left.");
                         
                     }
                     else
 	                 {
                         Console.WriteLine("You missed, better scurry away");
-                        Console.WriteLine("You have " + yourHealth + " left.");
+                        Console.WriteLine("You have " + yourHealth + " hp left.");
 	                 }
                 }
                 else if (input == "2")
@@ -77,7 +77,7 @@ namespace DragonCombatSimulator
                     dragonHealth -= mage;
                   
                     Console.WriteLine("The magic takes an effect of " + mage + " damage. The dragons health is now " + dragonHealth);
-                    Console.WriteLine("You have " + yourHealth + " left.");
+                    Console.WriteLine("You have " + yourHealth + " hp left.");
                 }
                 else  if (input == "3")
                 {
@@ -89,6 +89,10 @@ namespace DragonCombatSimulator
                     Console.WriteLine("You're still alive! Your health went up by " + heal + " !");
                     Console.WriteLine("You have " + yourHealth + " left.");
                 }
+                else
+                {
+                    Console.WriteLine("You don't have that attack! You are just dying!");
+                }
                                 
                 }
                 else
@@ -98,7 +102,7 @@ namespace DragonCombatSimulator
                 }
            
                
-                if (yourHealth == 0)
+                if (yourHealth <= 0)
                 {
                     playing = false;
                     Console.WriteLine("As expected, the dragon had you for dinner");
